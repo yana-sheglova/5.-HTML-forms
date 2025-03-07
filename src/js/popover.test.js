@@ -6,9 +6,8 @@ describe('Popover', () => {
 
     beforeEach(async () => {
         browser = await puppeteer.launch({
-            headless: false,
-            slowMo: 100,
-            devtools: true,
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox'],
         });
         page = await browser.newPage();
     });
@@ -29,6 +28,8 @@ describe('Popover', () => {
     });
 
     afterAll(async () => {
-        await browser.close();
+        if (browser) {
+            await browser.close();
+        }
     });
 })
