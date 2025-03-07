@@ -14,7 +14,7 @@ describe('Popover', () => {
 
     test('should show popover', async () => {
         await page.goto('http://localhost:9000');
-        //await page.waitForTimeout(2000);
+        await page.waitForTimeout(2000);
 
         const btn = await page.$('#popoverBtn');
         await btn.click();
