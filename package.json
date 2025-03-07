@@ -8,7 +8,8 @@
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint . --fix",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "start:test": "concurrently \"yarn start\" \"wait-on http://localhost:9000 && yarn test\""
   },
   "author": "Yana Sheglova <yana.shheglova.98@bk.ru>",
   "license": "MIT",
@@ -18,6 +19,7 @@
     "@babel/preset-env": "7.26.8",
     "@eslint/js": "9.20.0",
     "babel-loader": "9.2.1",
+    "concurrently": "^9.1.2",
     "css-loader": "7.1.2",
     "css-minimizer-webpack-plugin": "7.0.0",
     "eslint": "9.20.0",
@@ -33,6 +35,7 @@
     "prettier": "^3.5.2",
     "puppeteer": "^24.4.0",
     "terser-webpack-plugin": "5.3.11",
+    "wait-on": "^8.0.2",
     "webpack": "5.97.1",
     "webpack-cli": "6.0.1",
     "webpack-dev-server": "5.2.0",
