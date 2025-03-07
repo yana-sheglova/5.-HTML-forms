@@ -9,7 +9,7 @@
     "lint": "eslint . --fix",
     "test": "jest",
     "coverage": "jest --coverage",
-    "start:test": "concurrently --kill-others \"yarn start\" \"wait-on http://localhost:9000 && yarn test\""
+    "start:test": "concurrently --kill-others --success first \"yarn start\" \"wait-on http://localhost:9000 && yarn test\""
   },
   "author": "Yana Sheglova <yana.shheglova.98@bk.ru>",
   "license": "MIT",
